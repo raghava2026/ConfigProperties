@@ -4,11 +4,13 @@ server:
 spring:
   cloud:
     gateway:
-      routes:
-        - id: demo-api
-          uri: http://localhost:8081
-          predicates:
-            - Path=/hello
+      server:
+        webmvc:
+          routes:
+            - id: demo-api
+              uri: lb://DEMO-API
+              predicates:
+                - Path=/hello
 
   boot:
     admin:
