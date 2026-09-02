@@ -6,7 +6,7 @@ spring:
     gateway:
       routes:
         - id: demo-api
-          uri: lb://DEMO-API
+          uri: http://localhost:8081
           predicates:
             - Path=/hello
 
